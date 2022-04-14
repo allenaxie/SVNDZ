@@ -3,9 +3,8 @@ import Link  from 'next/link';
 import { 
     MenuUnfoldOutlined, 
     MenuFoldOutlined,
-    IdcardOutlined, 
-    UserAddOutlined,
-    ImportOutlined, 
+    ShoppingOutlined, 
+    TagOutlined,
     HomeOutlined,
     
 } from "@ant-design/icons";
@@ -40,19 +39,14 @@ const Navbar = ({isNavCollapsed, navToggle, isNewUser, setIsNewUser}: NavbarProp
                         Home           
                     </Link>
             </Menu.Item>
-            <Menu.Item className={classes.menuItems} key="about" icon={<IdcardOutlined />}>
+            <Menu.Item className={classes.menuItems} key="about" icon={<ShoppingOutlined />}>
                     <Link href="/about">
-                        About                
+                        Shop All                
                     </Link>
             </Menu.Item>
-            <Menu.Item className={classes.menuItems} key="signup" icon={ <UserAddOutlined /> } onClick={() => setIsNewUser(true)}>
-                <Link href="/auth">
-                    Sign Up
-                </Link>
-            </Menu.Item>
-            <Menu.Item className={classes.menuItems} key="login" icon={<ImportOutlined />} onClick={() => setIsNewUser(false)}>
-                <Link href="/auth">
-                    Log In
+            <Menu.Item className={classes.menuItems} key="signup" icon={ <TagOutlined />} onClick={() => setIsNewUser(true)}>
+                <Link href="/sale">
+                    Sale
                 </Link>
             </Menu.Item>
         </Menu>
