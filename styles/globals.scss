@@ -36,3 +36,45 @@ body {
     }
   }
 }
+
+.mainContainer{
+  width: 100vw;
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(to right, rgba(205, 197, 171, 0.894) 0%, rgba(137, 129, 108, 0.894)100%);
+  position: relative;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 200px;
+    cursor: pointer;
+  }
+  .headerItem {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    border: none !important;
+    color: white;
+    font-size: 1.7rem;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover{
+      text-decoration: underline;
+    }
+
+    & span {
+      margin-left: 1rem;
+    }
+  }
+  .account {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+}

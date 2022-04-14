@@ -16,21 +16,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Header className={classes.header}>
-          <div className={classes.logo}><Image src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/logo_white.png?v=1590001197" width={130} height={45}/></div>
-          <div key="My Cart" className={classes.headerItem}>
-            <ShoppingCartOutlined />
-            <span>
-              Cart
-            </span>
-          </div>
-          <div key="My Account" className={`${classes.account} ${classes.headerItem}`}>
-            <UserOutlined />
-            <span>
-              Account
-            </span>
-          </div>
-        </Header>
         <Content>
           <main className={classes.main}>
           </main>

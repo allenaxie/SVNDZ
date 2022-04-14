@@ -40,12 +40,12 @@ const Navbar = ({isNavCollapsed, navToggle, isNewUser, setIsNewUser}: NavbarProp
                     </Link>
             </Menu.Item>
             <Menu.Item className={classes.menuItems} key="about" icon={<ShoppingOutlined />}>
-                    <Link href="/about">
+                    <Link href="/">
                         Shop All                
                     </Link>
             </Menu.Item>
-            <Menu.Item className={classes.menuItems} key="signup" icon={ <TagOutlined />} onClick={() => setIsNewUser(true)}>
-                <Link href="/sale">
+            <Menu.Item className={classes.menuItems} key="signup" icon={ <TagOutlined />}>
+                <Link href="/">
                     Sale
                 </Link>
             </Menu.Item>
