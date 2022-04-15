@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Abel', sans-serif;
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -43,17 +43,19 @@ body {
 .header {
   display: flex;
   justify-content: flex-end;
-  background: linear-gradient(to right, rgba(205, 197, 171, 0.894) 0%, rgba(137, 129, 108, 0.894)100%);
-  position: relative;
+  background: rgba(232, 229, 216, 0.894);
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
 
   .logo {
     display: flex;
     justify-content: center;
     position: absolute;
-    width: 100%;
-    margin-top: 1rem;
-    margin-left: 200px;
     cursor: pointer;
+    left: 40%;
+    margin-top: 1rem;
+    margin-left: 80px;
   }
   .headerItem {
     display: flex;
@@ -70,11 +72,10 @@ body {
     }
 
     & span {
-      margin-left: 1rem;
+      margin-left: .7rem;
     }
   }
   .account {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-left: 1rem;
   }
 }

@@ -1,43 +1,19 @@
 .container {
   position: relative;
-  left: 80px;
+  padding-left: 80px;
 }
 
-.header {
-  display: flex;
-  justify-content: flex-end;
-  background: rgb(191, 181, 152);
-  position: relative;
-
-  .logo {
+.main {
+  .carouselItem {
+    height: 100vh;
     display: flex;
     justify-content: center;
-    position: absolute;
-    width: 100%;
-    margin-top: 1rem;
-    margin-right: 2rem;
-  }
-  .headerItem {
-    display: flex;
-    height: 100%;
     align-items: center;
-    border: none !important;
-    color: white;
-    font-size: 1.7rem;
-    cursor: pointer;
-    z-index: 2;
-
-    &:hover{
-      text-decoration: underline;
-    }
-
-    & span {
-      margin-left: 1rem;
-    }
+    text-align: center;
   }
-  .account {
-    margin-right: 8rem;
-    margin-left: 5rem;
+  .carouselImg {
+    width: 100%;
+
   }
 }
 

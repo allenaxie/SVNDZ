@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head';
 import Image from 'next/image';
 import classes from '../styles/Home.module.scss';
-import { Layout, Menu, Button } from 'antd';
+import { Layout, Menu, Button, Carousel } from 'antd';
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 
 const Home: NextPage = () => {
@@ -18,6 +18,18 @@ const Home: NextPage = () => {
       <Layout>
         <Content>
           <main className={classes.main}>
+            <Carousel autoplay>
+              <div className={classes.carouselItem}>
+                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/08_e9fc9bd5-703f-42be-aef7-27c3df25e652.jpg?v=1644648758"/>
+              </div>
+              <div className={classes.carouselItem}>
+                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/06_d248ecdd-cc3d-45de-a24d-68122ad6f2a1.jpg?v=1644651114"/>
+              </div>
+              <div className={classes.carouselItem}>
+                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/07_68e3c306-40b5-4af6-b070-8a5340aaea7f.jpg?v=1644648653"/>
+              </div>
+              
+            </Carousel>
           </main>
         </Content>
       </Layout>
