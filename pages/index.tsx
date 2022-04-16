@@ -6,7 +6,11 @@ import classes from '../styles/Home.module.scss';
 import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
 import { InstagramOutlined } from "@ant-design/icons";
 
-const Home: NextPage = () => {
+interface HomePageProps {
+  collection: any,
+}
+
+const HomePage = ({collection}:HomePageProps) => {
   const { Header, Footer, Sider, Content } = Layout;
   const { Title } = Typography;
   const { Meta } = Card;
@@ -35,56 +39,33 @@ const Home: NextPage = () => {
               </div>
             </Carousel>
 
-            <Row 
-            className={classes.mixMatchSection} 
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            data-aos-easing="ease-in-out"
+            <Row
+              className={classes.mixMatchSection}
+              data-aos="fade-up"
+              data-aos-duration="3000"
             >
               <Row className={classes.mixMatchHeadingContainer}>
                 <Title level={1} className={classes.mixMatchHeading}>MIX & MATCH</Title>
               </Row>
               <Row className={classes.products} gutter={[24, 24]}>
-                <Col span={6}>
+                {collection.splice(0,4).map((item:any,idx:number) => 
+                <Col
+                xs={{span:24}} 
+                sm={{span:12}}
+                lg={{span:6}}
+                >
                   <Card
                     hoverable
-                    extra={<span>$82.00</span>}
-                    cover={<img className={classes.cardImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002_600x.jpg?v=1643184108" />}
+                    extra={<span>{`$${item.price}.00`}</span>}
+                    cover={<img className={classes.cardImg} src={item.image} />}
                     className={classes.card}
                   >
-                    <Meta title="Zen Zip Up Hoodie (UNISEX)" />
+                    <Meta title={item.name} />
                   </Card>
                 </Col>
-                <Col span={6}>
-                  <Card
-                    hoverable
-                    extra={<span>$68.00</span>}
-                    cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22001-3_b448edb7-bd9a-41e6-9bf0-d196746e48b2_900x.jpg?v=1643185240" />}
-                    className={classes.card}
-                  >
-                    <Meta title="Zen Joggers (UNISEX)" />
-                  </Card>
-                </Col>
-                <Col span={6}>
-                  <Card
-                    hoverable
-                    extra={<span>$68.00</span>}
-                    cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22006_760x.jpg?v=1643251780" />}
-                    className={classes.card}
-                  >
-                    <Meta title="Karma Joggers" />
-                  </Card>
-                </Col>
-                <Col span={6}>
-                  <Card
-                    hoverable
-                    extra={<span>$148.00</span>}
-                    cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/21_8a8d1851-0109-4c5a-b438-c3ef3f6ecf2a_760x.jpg?v=1636705226" />}
-                    className={classes.card}
-                  >
-                    <Meta title="Rebel Puffer Jacket (UNISEX)" />
-                  </Card>
-                </Col>
+                ) 
+                }
+
               </Row>
               <Col className={classes.btnContainer}>
                 <button className={classes.viewAllBtn}>VIEW ALL</button>
@@ -154,7 +135,7 @@ const Home: NextPage = () => {
                   name="email"
                   rules={[{ required: true, message: 'Please input a valid email address.' }]}
                 >
-                  <Input placeholder="Enter your email" type="email"/>
+                  <Input placeholder="Enter your email" type="email" />
                 </Form.Item>
                 <Form.Item>
                   <Button htmlType="submit">Submit</Button>
@@ -163,19 +144,19 @@ const Home: NextPage = () => {
             </Col>
           </Row>
           <Row className={classes.copyrightContent}>
-              <Divider className={classes.divider}/>
-              <span>
-                ©2022 SVNDZ
-              </span>
+            <Divider className={classes.divider} />
+            <span>
+              ©2022 SVNDZ
+            </span>
           </Row>
         </Footer>
       </Layout>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+      <script>
+        AOS.init();
+      </script>
     </div>
   )
 }
 
-export default Home
+export default HomePage;
