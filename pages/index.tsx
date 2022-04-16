@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import classes from '../styles/Home.module.scss';
-import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button } from 'antd';
+import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
 import { InstagramOutlined } from "@ant-design/icons";
 
 const Home: NextPage = () => {
@@ -148,13 +148,19 @@ const Home: NextPage = () => {
                   name="email"
                   rules={[{ required: true, message: 'Please input a valid email address.' }]}
                 >
-                  <Input placeholder="Enter your email" />
+                  <Input placeholder="Enter your email" type="email"/>
                 </Form.Item>
                 <Form.Item>
                   <Button htmlType="submit">Submit</Button>
                 </Form.Item>
               </Form>
             </Col>
+          </Row>
+          <Row className={classes.copyrightContent}>
+              <Divider className={classes.divider}/>
+              <span>
+                ©2022 SVNDZ
+              </span>
           </Row>
         </Footer>
       </Layout>
