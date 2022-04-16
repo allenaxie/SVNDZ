@@ -36,17 +36,17 @@ const Navbar = ({isNavCollapsed, navToggle, isNewUser, setIsNewUser}: NavbarProp
             </div>
             <Menu.Item className={classes.menuItems} key="home" icon={<HomeOutlined />}>
                     <Link href="/">
-                        Home           
+                        HOME           
                     </Link>
             </Menu.Item>
             <Menu.Item className={classes.menuItems} key="about" icon={<ShoppingOutlined />}>
                     <Link href="/">
-                        Shop All                
+                        SHOP ALL               
                     </Link>
             </Menu.Item>
             <Menu.Item className={classes.menuItems} key="signup" icon={ <TagOutlined />}>
                 <Link href="/">
-                    Sale
+                    SALE
                 </Link>
             </Menu.Item>
         </Menu>

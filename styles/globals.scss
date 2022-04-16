@@ -43,9 +43,10 @@ body {
 .header {
   display: flex;
   justify-content: flex-end;
-  background: rgba(232, 229, 216, 0.894);
+  background: rgba(214, 211, 199, 0.894);
   position: fixed;
   width: 100vw;
+  border-bottom: rgba(4, 4, 4, 0.25);
   z-index: 2;
 
   .logo {

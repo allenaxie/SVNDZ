@@ -2,11 +2,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head';
 import Image from 'next/image';
 import classes from '../styles/Home.module.scss';
-import { Layout, Menu, Button, Carousel } from 'antd';
+import { Layout, Carousel, Row, Col, Typography, Card } from 'antd';
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 
 const Home: NextPage = () => {
   const { Header, Footer, Sider, Content } = Layout;
+  const {Title} = Typography;
+  const {Meta} = Card;
 
   return (
     <div className={classes.container}>
@@ -18,6 +20,7 @@ const Home: NextPage = () => {
       <Layout>
         <Content>
           <main className={classes.main}>
+
             <Carousel autoplay>
               <div className={classes.carouselItem}>
                 <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/08_e9fc9bd5-703f-42be-aef7-27c3df25e652.jpg?v=1644648758"/>
@@ -28,8 +31,59 @@ const Home: NextPage = () => {
               <div className={classes.carouselItem}>
                 <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/07_68e3c306-40b5-4af6-b070-8a5340aaea7f.jpg?v=1644648653"/>
               </div>
-              
             </Carousel>
+
+            <Row className={classes.mixMatchSection}>
+              <Row className={classes.mixMatchHeadingContainer}>
+                <Title level={1} className={classes.mixMatchHeading}>MIX & MATCH</Title>
+              </Row>
+              <Row className={classes.products} gutter={[24,24]}>
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    extra={<span>$82.00</span>}
+                    cover={<img className={classes.cardImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002_600x.jpg?v=1643184108" />}
+                    className={classes.card}
+                  >
+                    <Meta title="Zen Zip Up Hoodie (UNISEX)"/>
+                  </Card>
+                </Col>
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    extra={<span>$68.00</span>}
+                    cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22001-3_b448edb7-bd9a-41e6-9bf0-d196746e48b2_900x.jpg?v=1643185240" />}
+                    className={classes.card}
+                  >
+                    <Meta title="Zen Joggers (UNISEX)"/>
+                  </Card>
+                </Col>
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    extra={<span>$68.00</span>}
+                    cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22006_760x.jpg?v=1643251780" />}
+                    className={classes.card}
+                  >
+                    <Meta title="Karma Joggers"/>
+                  </Card>
+                </Col>
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    extra={<span>$148.00</span>}
+                    cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/21_8a8d1851-0109-4c5a-b438-c3ef3f6ecf2a_760x.jpg?v=1636705226" />}
+                    className={classes.card}
+                  >
+                    <Meta title="Rebel Puffer Jacket (UNISEX)"/>
+                  </Card>
+                </Col>
+              </Row>
+              <Col className={classes.btnContainer}>
+                <button className={classes.viewAllBtn}>VIEW ALL</button>
+              </Col>
+            </Row>
+
           </main>
         </Content>
       </Layout>
