@@ -2,11 +2,10 @@ import 'antd/dist/antd.css';
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
-import { Layout } from 'antd';
 import { Navbar } from '../components';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router'
+import { Layout, Row, Col } from 'antd';
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 
 function MyApp({ Component, pageProps }: AppProps) {

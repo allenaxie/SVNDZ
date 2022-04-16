@@ -1,14 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import classes from '../styles/Home.module.scss';
-import { Layout, Carousel, Row, Col, Typography, Card } from 'antd';
-import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
+import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button } from 'antd';
+import { InstagramOutlined } from "@ant-design/icons";
 
 const Home: NextPage = () => {
   const { Header, Footer, Sider, Content } = Layout;
-  const {Title} = Typography;
-  const {Meta} = Card;
+  const { Title } = Typography;
+  const { Meta } = Card;
 
   return (
     <div className={classes.container}>
@@ -23,13 +24,13 @@ const Home: NextPage = () => {
 
             <Carousel autoplay>
               <div className={classes.carouselItem}>
-                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/08_e9fc9bd5-703f-42be-aef7-27c3df25e652.jpg?v=1644648758"/>
+                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/08_e9fc9bd5-703f-42be-aef7-27c3df25e652.jpg?v=1644648758" />
               </div>
               <div className={classes.carouselItem}>
-                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/06_d248ecdd-cc3d-45de-a24d-68122ad6f2a1.jpg?v=1644651114"/>
+                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/06_d248ecdd-cc3d-45de-a24d-68122ad6f2a1.jpg?v=1644651114" />
               </div>
               <div className={classes.carouselItem}>
-                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/07_68e3c306-40b5-4af6-b070-8a5340aaea7f.jpg?v=1644648653"/>
+                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/07_68e3c306-40b5-4af6-b070-8a5340aaea7f.jpg?v=1644648653" />
               </div>
             </Carousel>
 
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
               <Row className={classes.mixMatchHeadingContainer}>
                 <Title level={1} className={classes.mixMatchHeading}>MIX & MATCH</Title>
               </Row>
-              <Row className={classes.products} gutter={[24,24]}>
+              <Row className={classes.products} gutter={[24, 24]}>
                 <Col span={6}>
                   <Card
                     hoverable
@@ -45,7 +46,7 @@ const Home: NextPage = () => {
                     cover={<img className={classes.cardImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002_600x.jpg?v=1643184108" />}
                     className={classes.card}
                   >
-                    <Meta title="Zen Zip Up Hoodie (UNISEX)"/>
+                    <Meta title="Zen Zip Up Hoodie (UNISEX)" />
                   </Card>
                 </Col>
                 <Col span={6}>
@@ -55,7 +56,7 @@ const Home: NextPage = () => {
                     cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22001-3_b448edb7-bd9a-41e6-9bf0-d196746e48b2_900x.jpg?v=1643185240" />}
                     className={classes.card}
                   >
-                    <Meta title="Zen Joggers (UNISEX)"/>
+                    <Meta title="Zen Joggers (UNISEX)" />
                   </Card>
                 </Col>
                 <Col span={6}>
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
                     cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22006_760x.jpg?v=1643251780" />}
                     className={classes.card}
                   >
-                    <Meta title="Karma Joggers"/>
+                    <Meta title="Karma Joggers" />
                   </Card>
                 </Col>
                 <Col span={6}>
@@ -75,7 +76,7 @@ const Home: NextPage = () => {
                     cover={<img src="https://cdn.shopify.com/s/files/1/0275/7784/3823/products/21_8a8d1851-0109-4c5a-b438-c3ef3f6ecf2a_760x.jpg?v=1636705226" />}
                     className={classes.card}
                   >
-                    <Meta title="Rebel Puffer Jacket (UNISEX)"/>
+                    <Meta title="Rebel Puffer Jacket (UNISEX)" />
                   </Card>
                 </Col>
               </Row>
@@ -83,9 +84,79 @@ const Home: NextPage = () => {
                 <button className={classes.viewAllBtn}>VIEW ALL</button>
               </Col>
             </Row>
-
           </main>
         </Content>
+        <Footer className={classes.footer}>
+          <Row className={classes.footerContent}>
+            <Col span={4} className={classes.footerCol}>
+              <Link href="/">
+                <span className={classes.linkText}>
+                  ORDER AND PAYMENT
+                </span>
+              </Link >
+              <Link href="/">
+                <span className={classes.linkText}>
+                  SHIPPING & DELIVERY
+                </span>
+              </Link >
+              <Link href="/">
+                <span className={classes.linkText}>
+                  RETURNS
+                </span>
+              </Link >
+              <Link href="/">
+                <span className={classes.linkText}>
+                  SIZE GUIDE
+                </span>
+              </Link >
+            </Col>
+            <Col span={4} className={classes.footerCol}>
+              <Link href="/">
+                <span className={classes.linkText}>
+                  PRIVACY POLICY
+                </span>
+              </Link>
+              <Link href="/">
+                <span className={classes.linkText}>
+                  TERMS OF SERVICE
+                </span>
+              </Link>
+            </Col>
+            <Col span={4} className={classes.footerCol}>
+              <Link href='/' >
+                <span className={classes.linkText}>
+                  CONTACT US
+                </span>
+              </Link>
+            </Col>
+            <Col span={4} className={classes.footerCol}>
+              <span>CONNECT WITH US</span>
+              <a href="https://www.instagram.com/svndz_official/" target="_blank" className={classes.iGIcon} >
+                <InstagramOutlined />
+              </a>
+            </Col>
+            <Col span={4} className={classes.footerCol}>
+              <span>
+                SUBSCRIBE TO OUR NEWSLETTER
+              </span>
+              <Form
+                className={classes.form}
+                name="newsletter form"
+              >
+                <Form.Item
+                  className={classes.emailFormItem}
+                  name="email"
+                  rules={[{ required: true, message: 'Please input a valid email address.' }]}
+                >
+                  <Input placeholder="Enter your email" />
+                </Form.Item>
+                <Form.Item>
+                  <Button htmlType="submit">Submit</Button>
+                </Form.Item>
+              </Form>
+            </Col>
+          </Row>
+        </Footer>
       </Layout>
     </div>
   )
