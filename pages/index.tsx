@@ -53,7 +53,7 @@ const HomePage = ({collection, router}:HomePageProps) => {
                 <Title level={1} className={classes.mixMatchHeading}>MIX & MATCH</Title>
               </Row>
               <Row className={classes.products} gutter={[24, 24]}>
-                {collection.splice(0,4).map((item:any,idx:number) => 
+                {collection.splice(0,8).map((item:any,idx:number) => 
                 <Col
                 xs={{span:24}} 
                 sm={{span:12}}
