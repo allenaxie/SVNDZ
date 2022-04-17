@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         theme="light"
         trigger={null}
       >
-        <Navbar isNavCollapsed={isNavCollapsed} navToggle={navToggle} isNewUser={isNewUser} setIsNewUser={setIsNewUser} />
+        <Navbar isNavCollapsed={isNavCollapsed} navToggle={navToggle} setIsNavCollapsed={setIsNavCollapsed} isNewUser={isNewUser} setIsNewUser={setIsNewUser} />
       </Sider>
       <Layout className="mainContainer">
         <Header className="header">
@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </Header>
         <Content>
-          <Component {...pageProps} collection={collection}/>
+          <Component {...pageProps} collection={collection} router={router}/>
         </Content>
       </Layout>
      

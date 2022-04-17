@@ -20,18 +20,26 @@
   .mixMatchSection {
     margin: 0 3rem 3rem 3rem;
     padding: 3rem;
-  }
-  .mixMatchHeadingContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    
+    .mixMatchHeadingContainer {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  
+      .mixMatchHeading {
+        text-decoration: underline;
+        font-weight: 100;
+        text-decoration-thickness: 2px;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+      }
+    }
 
-    .mixMatchHeading {
-      text-decoration: underline;
-      font-weight: 100;
-      text-decoration-thickness: 2px;
-      letter-spacing: 1px;
-      margin-bottom: 2rem;
+    .card {
+      transition: all .2s;
+      &:hover {
+        transform: scale(1.05)
+      }
     }
   }
 

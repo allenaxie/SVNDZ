@@ -8,12 +8,17 @@ import { InstagramOutlined } from "@ant-design/icons";
 
 interface HomePageProps {
   collection: any,
+  router: any,
 }
 
-const HomePage = ({collection}:HomePageProps) => {
+const HomePage = ({collection, router}:HomePageProps) => {
   const { Header, Footer, Sider, Content } = Layout;
   const { Title } = Typography;
   const { Meta } = Card;
+
+  const handleViewAll = () => {
+    router.push('/collections/all')
+  }
 
   return (
     <div className={classes.container}>
@@ -63,12 +68,11 @@ const HomePage = ({collection}:HomePageProps) => {
                     <Meta title={item.name} />
                   </Card>
                 </Col>
-                ) 
-                }
+                )}
 
               </Row>
               <Col className={classes.btnContainer}>
-                <button className={classes.viewAllBtn}>VIEW ALL</button>
+                <button className={classes.viewAllBtn} onClick={handleViewAll}>VIEW ALL</button>
               </Col>
             </Row>
           </main>

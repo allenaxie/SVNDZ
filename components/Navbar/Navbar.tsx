@@ -17,30 +17,32 @@ import {
 interface NavbarProps {
     isNavCollapsed: boolean,
     navToggle: any,
+    setIsNavCollapsed: any,
     isNewUser: boolean,
     setIsNewUser: any,
 }
 
-const Navbar = ({isNavCollapsed, navToggle, isNewUser, setIsNewUser}: NavbarProps) => {
+const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsNewUser}: NavbarProps) => {
 
     return (
         <Menu
             className={classes.navbarContainer}
             theme="light"
             mode="inline"
+            onClick={() => setIsNavCollapsed(true)}
         >
             <div className={classes.togglerContainer}>
                 <Button onClick={navToggle}>
                     {isNavCollapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
                 </Button>
             </div>
-            <Menu.Item className={classes.menuItems} key="home" icon={<HomeOutlined />}>
+            <Menu.Item className={classes.menuItems} key="home" icon={<HomeOutlined />} >
                     <Link href="/">
                         HOME           
                     </Link>
             </Menu.Item>
             <Menu.Item className={classes.menuItems} key="about" icon={<ShoppingOutlined />}>
-                    <Link href="/">
+                    <Link href="/collections/all">
                         SHOP ALL               
                     </Link>
             </Menu.Item>
