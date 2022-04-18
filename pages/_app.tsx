@@ -26,6 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     name: string,
     price: number,
     image: string,
+    image2: string,
+    image3: string,
+    image4: string,
+    image5: string,
+    image6: string,
   }
 
   const collections:Collections[] = [
@@ -33,6 +38,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       name: "Zen Zip Up Hoodie (UNISEX)",
       price: 82,
       image: "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002_600x.jpg?v=1643184108",
+      image2: "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-2.jpg?v=1643184109",
+      image3: "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-4_3000x.jpg?v=1643185448",
+      image4: "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-3_9804df63-13b2-4485-98c2-e2adcc77944a_3000x.jpg?v=1643185448",
+      image5: "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-5_3000x.jpg?v=1643185441",
+      image6: "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-6_3000x.jpg?v=1643185441",
     },
     {
       name: "Zen Joggers (UNISEX)",
