@@ -1,6 +1,6 @@
 import classes from './productDetailsPage.module.scss';
 import { useState } from 'react';
-import { Row, Col, Image, Typography } from 'antd';
+import { Row, Col, Image, Typography, Button } from 'antd';
 import { SizeGuide } from '../../../../../components';
 
 const ProductDetailsPage = (props: any) => {
@@ -28,7 +28,7 @@ const ProductDetailsPage = (props: any) => {
                 lg={{ span: 8 }}
             >
                 <Title level={2}>{name}</Title>
-                <Title level={2}>${price}.00 USD</Title>
+                <Title level={3} className={classes.price}>${price}.00 USD</Title>
                 <Row>
                     <Col 
                     className={classes.sizeBtnGroup}
@@ -45,8 +45,9 @@ const ProductDetailsPage = (props: any) => {
                     </Col>
                 </Row>
                 <div className={classes.sizeGuideContainer}>
-                    <SizeGuide/>
+                    <SizeGuide />
                 </div>
+                <button className={classes.addBagBtn}> ADD TO BAG </button>
             </Col>
         </Row>
     )
