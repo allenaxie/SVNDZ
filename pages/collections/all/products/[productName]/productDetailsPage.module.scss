@@ -47,4 +47,18 @@
             text-decoration: underline;
         }
     }
+
+    .detailsContainer {
+        margin-top: 2rem;
+        .description {
+            font-size: 2rem;
+        }
+
+        .moreDetails {
+            padding: 1rem;
+            .moreDetailsText {
+                font-size: 2rem;
+            }
+        }
+    }
 }

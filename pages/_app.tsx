@@ -26,6 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     name: string,
     price: number,
     images: Array<string>,
+    description: string,
+    moreDetails: Array<string>,
   }
 
   const collections:Collections[] = [
@@ -38,7 +40,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-3_9804df63-13b2-4485-98c2-e2adcc77944a_3000x.jpg?v=1643185448",
         "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-5_3000x.jpg?v=1643185441",
         "https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22002-6_3000x.jpg?v=1643185441",
-      ]
+      ],
+      description: "Stay cozy this season in the Zen Zip Up Hoodie. Cinched together with fitted cuffs and hemline to keep a slouchy fit. Pull over a Zen LS Top and Zen Joggers for an effortless athleisure look. ",
+      moreDetails: [`Kathy is wearing size S. Height 5'5” / Chest 33” / Waist 26”/ Hip 36"`, `Male model is wearing size L. Height  6'1" / Chest  33" / Waist  30"/ Hip 38"`, `80% Cotton | 20% Polyester`, `Machine wash cold | Tumble dry low`]
     },
     {
       name: "Zen Joggers (UNISEX)",

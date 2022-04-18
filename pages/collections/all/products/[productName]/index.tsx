@@ -6,7 +6,7 @@ import { SizeGuide } from '../../../../../components';
 const ProductDetailsPage = (props: any) => {
     const data = JSON.parse(props.router.query.data)
     const { Title } = Typography;
-    const [name, price, images] = [data.name,data.price, data.images ];
+    const [name, price, images, description, moreDetails] = [data.name,data.price, data.images, data.description, data.moreDetails ];
     const [selectedSize, setSelectedSize] = useState('M');
 
     const sizes = ['XS','S','M','L','XL']
@@ -50,6 +50,18 @@ const ProductDetailsPage = (props: any) => {
                     <SizeGuide />
                 </div>
                 <button className={classes.addBagBtn}> ADD TO BAG </button>
+                <div className={classes.detailsContainer}>
+                    <span className={classes.description}>{description}</span>
+                    <ul className={classes.moreDetails}>
+                        {moreDetails.map((detail:string) => 
+                            <li>
+                                <span className={classes.moreDetailsText}>
+                                    {detail}
+                                </span>
+                            </li>
+                        )}
+                    </ul>
+                </div>
             </Col>
         </Row>
     )
