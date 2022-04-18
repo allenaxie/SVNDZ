@@ -22,7 +22,9 @@ const ProductDetailsPage = (props: any) => {
                 lg={{ span: 16 }}
                 className={classes.imageGroup}
             >
-                {images.map((image :string,index:number) => <Image width={400} src={image} />)}
+                <Image.PreviewGroup>
+                    {images.map((image :string,index:number) => <Image width={400} src={image} />)}
+                </Image.PreviewGroup>
             </Col>
             <Col
                 lg={{ span: 8 }}

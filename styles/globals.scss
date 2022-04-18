@@ -10,7 +10,7 @@ body {
 .siderNav {
   height: 100vh;
   position: fixed;
-  z-index: 2000;
+  z-index: 200;
   left: 0;
   top: 0;
   bottom: 0;
@@ -24,7 +24,7 @@ body {
   background-color: rgba(4, 4, 4, 0.838);
   position: absolute;
   left: 200px;
-  z-index:1000;
+  z-index:300;
   animation: fadeIn .3s;
 
   @keyframes fadeIn {
@@ -48,7 +48,7 @@ body {
   position: fixed;
   width: 100vw;
   border-bottom: rgba(4, 4, 4, 0.25);
-  z-index: 2;
+  z-index: 100;
 
   .logo {
     display: flex;
