@@ -1,0 +1,50 @@
+.footerContent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+
+    .footerCol {
+      display: flex;
+      flex-direction: column;
+
+      .linkText {
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 1rem;
+      }
+
+      .iGIcon {
+        color: #fff;
+        margin-top: 1rem;
+        display: flex;
+        width: min-content;
+
+        & svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .form {
+        display: flex;
+        margin-top: 1rem;
+
+        .emailFormItem {
+          width:100%;
+        }
+      }
+    }
+  }
+
+  .copyrightContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .divider {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }

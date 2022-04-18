@@ -5,7 +5,7 @@ import Link from 'next/link';
 import classes from '../styles/Home.module.scss';
 import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
 import { InstagramOutlined } from "@ant-design/icons";
-import {ProductItem} from '../components';
+import {ProductItem, FooterComp} from '../components';
 
 interface HomePageProps {
   collections: any,
@@ -65,83 +65,10 @@ const HomePage = ({collections, router}:HomePageProps) => {
           </main>
         </Content>
         <Footer className={classes.footer}>
-          <Row className={classes.footerContent}>
-            <Col span={4} className={classes.footerCol}>
-              <Link href="/">
-                <span className={classes.linkText}>
-                  ORDER AND PAYMENT
-                </span>
-              </Link >
-              <Link href="/">
-                <span className={classes.linkText}>
-                  SHIPPING & DELIVERY
-                </span>
-              </Link >
-              <Link href="/">
-                <span className={classes.linkText}>
-                  RETURNS
-                </span>
-              </Link >
-              <Link href="/">
-                <span className={classes.linkText}>
-                  SIZE GUIDE
-                </span>
-              </Link >
-            </Col>
-            <Col span={4} className={classes.footerCol}>
-              <Link href="/">
-                <span className={classes.linkText}>
-                  PRIVACY POLICY
-                </span>
-              </Link>
-              <Link href="/">
-                <span className={classes.linkText}>
-                  TERMS OF SERVICE
-                </span>
-              </Link>
-            </Col>
-            <Col span={4} className={classes.footerCol}>
-              <Link href='/' >
-                <span className={classes.linkText}>
-                  CONTACT US
-                </span>
-              </Link>
-            </Col>
-            <Col span={4} className={classes.footerCol}>
-              <span>CONNECT WITH US</span>
-              <a href="https://www.instagram.com/svndz_official/" target="_blank" className={classes.iGIcon} >
-                <InstagramOutlined />
-              </a>
-            </Col>
-            <Col span={4} className={classes.footerCol}>
-              <span>
-                SUBSCRIBE TO OUR NEWSLETTER
-              </span>
-              <Form
-                className={classes.form}
-                name="newsletter form"
-              >
-                <Form.Item
-                  className={classes.emailFormItem}
-                  name="email"
-                  rules={[{ required: true, message: 'Please input a valid email address.' }]}
-                >
-                  <Input placeholder="Enter your email" type="email" />
-                </Form.Item>
-                <Form.Item>
-                  <Button htmlType="submit">Submit</Button>
-                </Form.Item>
-              </Form>
-            </Col>
-          </Row>
-          <Row className={classes.copyrightContent}>
-            <Divider className={classes.divider} />
-            <span>
-              ©2022 SVNDZ
-            </span>
-          </Row>
+          <FooterComp/>
         </Footer>
       </Layout>
+      
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
         AOS.init();
