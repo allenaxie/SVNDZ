@@ -4,12 +4,12 @@ import type { AppProps } from 'next/app';
 import { useState } from 'react';
 import { Navbar } from '../components';
 import Image from 'next/image';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { Layout, Row, Col } from 'antd';
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const router = useRouter();
   const { Header, Footer, Sider, Content } = Layout;
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [isNewUser, setIsNewUser] = useState(true);
@@ -22,13 +22,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     router.push('/')
   }
 
-  interface Collection {
+  interface Collections {
     name: string,
     price: number,
     image: string,
   }
 
-  const collection:Collection[] = [
+  const collections:Collections[] = [
     {
       name: "Zen Zip Up Hoodie (UNISEX)",
       price: 82,
@@ -150,7 +150,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </Header>
         <Content>
-          <Component {...pageProps} collection={collection} router={router}/>
+          <Component {...pageProps} collections={collections} router={router}/>
         </Content>
       </Layout>
      

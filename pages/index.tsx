@@ -5,13 +5,14 @@ import Link from 'next/link';
 import classes from '../styles/Home.module.scss';
 import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
 import { InstagramOutlined } from "@ant-design/icons";
+import {ProductItem} from '../components';
 
 interface HomePageProps {
-  collection: any,
+  collections: any,
   router: any,
 }
 
-const HomePage = ({collection, router}:HomePageProps) => {
+const HomePage = ({collections, router}:HomePageProps) => {
   const { Header, Footer, Sider, Content } = Layout;
   const { Title } = Typography;
   const { Meta } = Card;
@@ -47,29 +48,15 @@ const HomePage = ({collection, router}:HomePageProps) => {
             <Row
               className={classes.mixMatchSection}
               data-aos="fade-up"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Row className={classes.mixMatchHeadingContainer}>
                 <Title level={1} className={classes.mixMatchHeading}>MIX & MATCH</Title>
               </Row>
               <Row className={classes.products} gutter={[24, 24]}>
-                {collection.splice(0,8).map((item:any,idx:number) => 
-                <Col
-                xs={{span:24}} 
-                sm={{span:12}}
-                lg={{span:6}}
-                >
-                  <Card
-                    hoverable
-                    extra={<span>{`$${item.price}.00`}</span>}
-                    cover={<img className={classes.cardImg} src={item.image} />}
-                    className={classes.card}
-                  >
-                    <Meta title={item.name} />
-                  </Card>
-                </Col>
+                {collections.slice(0,8).map((item:any,index:number) => 
+                  <ProductItem item={item} index={index}/>
                 )}
-
               </Row>
               <Col className={classes.btnContainer}>
                 <button className={classes.viewAllBtn} onClick={handleViewAll}>VIEW ALL</button>

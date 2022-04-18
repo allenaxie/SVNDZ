@@ -1,11 +1,12 @@
 import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
 import classes from './all.module.scss';
+import {ProductList} from '../../../components';
 
 interface AllCollectionsProps {
-    collection: any,
+    collections: any,
 }
 
-const AllCollections = ({ collection }: AllCollectionsProps) => {
+const AllCollections = ({ collections }: AllCollectionsProps) => {
     const { Header, Footer, Sider, Content } = Layout;
     const { Title } = Typography;
     const { Meta } = Card;
@@ -13,22 +14,7 @@ const AllCollections = ({ collection }: AllCollectionsProps) => {
     return (
         <div className={classes.container}>
             <Row className={classes.productsContainer} gutter={[36, 36]}>
-                {collection.map((item: any, idx: number) =>
-                    <Col
-                        xs={{ span: 24 }}
-                        sm={{ span: 12 }}
-                        lg={{ span: 6 }}
-                    >
-                        <Card
-                            hoverable
-                            extra={<span>{`$${item.price}.00`}</span>}
-                            cover={<img className={classes.cardImg} src={item.image} />}
-                            className={classes.card}
-                        >
-                            <Meta title={item.name} />
-                        </Card>
-                    </Col>
-                )}
+                <ProductList collections={collections}/>
             </Row>
         </div>
     )
