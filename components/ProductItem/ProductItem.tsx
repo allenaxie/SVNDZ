@@ -17,14 +17,7 @@ const ProductItem = ({ item, index }: ProductItemProps) => {
     router.push({
       pathname: `/collections/all/products/${item.name}`,
       query: {
-        name: `${item.name}`,
-        price: `${item.price}`,
-        image: `${item.image}`,
-        image2: `${item.image2}`,
-        image3: `${item.image3}`,
-        image4: `${item.image4}`,
-        image5: `${item.image5}`,
-        image6: `${item.image6}`,
+        data: JSON.stringify(item)
       }
     }, `/collections/all/products/${item.name}`);
   }
@@ -38,7 +31,7 @@ const ProductItem = ({ item, index }: ProductItemProps) => {
       <Card
         hoverable
         extra={<span>{`$${item.price}.00`}</span>}
-        cover={<img className={classes.cardImg} src={item.image} />}
+        cover={<img className={classes.cardImg} src={item.images[0]} />}
         className={classes.card}
         onClick={() => handleCardClick(item)}
       >
