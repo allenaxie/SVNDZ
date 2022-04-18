@@ -1,10 +1,7 @@
 import classes from './productDetailsPage.module.scss';
 import { useState } from 'react';
 import { Row, Col, Image, Typography } from 'antd';
-
-interface ProductDetailsPageProps {
-    collections: any,
-}
+import { SizeGuide } from '../../../../../components';
 
 const ProductDetailsPage = (props: any) => {
     const data = JSON.parse(props.router.query.data)
@@ -15,7 +12,6 @@ const ProductDetailsPage = (props: any) => {
     const sizes = ['XS','S','M','L','XL']
 
     const handleSizeClick = (e:any) => {
-        console.log(e.target.innerText);
         let size = e.target.innerText;
         setSelectedSize(size);
     }
@@ -48,6 +44,9 @@ const ProductDetailsPage = (props: any) => {
                         )}
                     </Col>
                 </Row>
+                <div className={classes.sizeGuideContainer}>
+                    <SizeGuide/>
+                </div>
             </Col>
         </Row>
     )
