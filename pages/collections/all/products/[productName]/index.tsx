@@ -16,6 +16,8 @@ const ProductDetailsPage = (props: any) => {
         setSelectedSize(size);
     }
 
+    console.log('images',images)
+
     return (
         <Row className={classes.container}>
             <Col
@@ -25,6 +27,7 @@ const ProductDetailsPage = (props: any) => {
                 <Image.PreviewGroup>
                     {images.map((image :string,index:number) => <Image width={ images.length < 3 ? 400 : 250} src={image} />)}
                 </Image.PreviewGroup>
+                {/* <img src={images[0]} /> */}
             </Col>
             <Col
                 lg={{ span: 8 }}
