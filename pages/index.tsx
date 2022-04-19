@@ -5,7 +5,7 @@ import Link from 'next/link';
 import classes from '../styles/Home.module.scss';
 import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
 import { InstagramOutlined } from "@ant-design/icons";
-import {ProductItem, FooterComp} from '../components';
+import {ProductItem, FooterComp, CarouselComp} from '../components';
 
 interface HomePageProps {
   collections: any,
@@ -32,19 +32,9 @@ const HomePage = ({collections, router}:HomePageProps) => {
       <Layout>
         <Content>
           <main className={classes.main}>
-
-            <Carousel autoplay className={classes.carousel}>
-              <div className={classes.carouselItem} onClick={handleViewAll}>
-                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/08_e9fc9bd5-703f-42be-aef7-27c3df25e652.jpg?v=1644648758" />
-              </div>
-              <div className={classes.carouselItem} onClick={handleViewAll}>
-                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/06_d248ecdd-cc3d-45de-a24d-68122ad6f2a1.jpg?v=1644651114" />
-              </div>
-              <div className={classes.carouselItem} onClick={handleViewAll}>
-                <img className={classes.carouselImg} src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/07_68e3c306-40b5-4af6-b070-8a5340aaea7f.jpg?v=1644648653" />
-              </div>
-            </Carousel>
-
+  
+            <CarouselComp handleViewAll={handleViewAll}/>
+  
             <Row
               className={classes.mixMatchSection}
               data-aos="fade-up"
