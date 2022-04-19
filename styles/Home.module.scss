@@ -4,17 +4,21 @@
 }
 
 .main {
-  .carouselItem {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .carouselImg {
-    width: 100%;
-    padding-bottom: 5px;
+  .carousel {
+    cursor: pointer;
 
+    .carouselItem {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .carouselImg {
+      width: 100%;
+      padding-bottom: 5px;
+  
+    }
   }
 
   .mixMatchSection {

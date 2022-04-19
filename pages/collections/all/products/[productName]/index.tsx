@@ -53,7 +53,7 @@ const ProductDetailsPage = (props: any) => {
                 <div className={classes.detailsContainer}>
                     <span className={classes.description}>{description}</span>
                     <ul className={classes.moreDetails}>
-                        {moreDetails.map((detail:string) => 
+                        {moreDetails?.map((detail:string) => 
                             <li>
                                 <span className={classes.moreDetailsText}>
                                     {detail}
