@@ -21,6 +21,7 @@ const HomePage = ({collections, router, products}:HomePageProps) => {
 
   // console.log('products', products)
 
+  
   const handleViewAll = () => {
     router.push('/collections/all')
   }
