@@ -1,7 +1,7 @@
 import classes from "./Navbar.module.scss";
 import Link  from 'next/link';
 import { useState } from 'react';
-import {SearchProducts} from '../index';
+import {SearchSidebar} from '../index';
 import { 
     MenuUnfoldOutlined, 
     MenuFoldOutlined,
@@ -65,7 +65,7 @@ const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsN
             <Menu.Item className={classes.menuItems} key="search" icon={ <SearchOutlined />} onClick={showDrawer}>
                 SEARCH
             </Menu.Item>
-            <SearchProducts drawerVisible={drawerVisible} setDrawerVisible={setDrawerVisible} collections={collections}/>
+            <SearchSidebar drawerVisible={drawerVisible} setDrawerVisible={setDrawerVisible} collections={collections}/>
             
         </Menu>
     )

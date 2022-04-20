@@ -1,14 +1,14 @@
-import classes from './SearchProducts.module.scss';
+import classes from './SearchSidebar.module.scss';
 import { useEffect, useState } from 'react';
 import { Drawer, Input, Popover, Row, Col, List } from 'antd';
 
-interface SearchProductsProps {
+interface SearchSidebarProps {
     drawerVisible: boolean,
     setDrawerVisible: any,
     collections: any,
 }
 
-const SearchProducts = ({ drawerVisible, setDrawerVisible, collections }: SearchProductsProps) => {
+const SearchSidebar = ({ drawerVisible, setDrawerVisible, collections }: SearchSidebarProps) => {
     const [popoverVisible, setPopoverVisible] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -33,6 +33,7 @@ const SearchProducts = ({ drawerVisible, setDrawerVisible, collections }: Search
         let value = e.target.value;
         setSearchTerm(value);
         console.log(value)
+        // {searchTerm.length > 1 ? setPopoverVisible(true) : setPopoverVisible(false)};
         // // if no input value, reset search results
         // if (value.length < 1) {
         //     setSearchResults([]);
@@ -55,6 +56,10 @@ const SearchProducts = ({ drawerVisible, setDrawerVisible, collections }: Search
         </div>
     )
 
+    const handleFocus = () => {
+        
+    }
+
     return (
         <>
             <Drawer
@@ -63,16 +68,23 @@ const SearchProducts = ({ drawerVisible, setDrawerVisible, collections }: Search
                 onClose={closeDrawer}
                 visible={drawerVisible}
             >
-                {searchResults.length > 0 ? 
-                <Popover placement='bottomLeft' content={popoverContent} trigger='focus'>
-                    <Input placeholder='Enter product name' onChange={handleChange} allowClear/>
-                </Popover>
-                :
-                <Input placeholder='Enter product name' onChange={handleChange} allowClear/>
-            }
+                <Popover 
+                    placement='bottomLeft' 
+                    content={popoverContent} 
+                    trigger='focus' 
+                    // visible={popoverVisible}
+                    className={classes.popover}
+                >
+                    <Input 
+                        placeholder='Enter product name' 
+                        onChange={handleChange} 
+                        allowClear
+                        onFocus={handleFocus}
+                    />
+                </Popover>            
             </Drawer>
         </>
     )
 }
 
-export default SearchProducts;
+export default SearchSidebar;
