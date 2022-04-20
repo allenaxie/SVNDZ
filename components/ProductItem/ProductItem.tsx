@@ -1,6 +1,6 @@
 import classes from './ProductItem.module.scss';
 import { useRouter } from 'next/router';
-import { Col, Card } from 'antd';
+import { Col, Card, Image } from 'antd';
 
 
 interface ProductItemProps {
@@ -31,7 +31,7 @@ const ProductItem = ({ item, index }: ProductItemProps) => {
       <Card
         hoverable
         extra={<span>{`$${item.price}.00`}</span>}
-        cover={<img className={classes.cardImg} src={item.images[0]} />}
+        cover={<Image className={classes.cardImg} src={item.images[0]} preview={false}/>}
         className={classes.card}
         onClick={() => handleCardClick(item)}
       >

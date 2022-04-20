@@ -19,7 +19,7 @@ const HomePage = ({collections, router, products}:HomePageProps) => {
   const { Title } = Typography;
   const { Meta } = Card;
 
-  console.log('products', products)
+  // console.log('products', products)
 
   const handleViewAll = () => {
     router.push('/collections/all')
