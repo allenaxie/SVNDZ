@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { MongoClient } from 'mongodb';
 import Head from 'next/head';
 import Image from 'next/image';
+import { MongoClient } from 'mongodb';
 import Link from 'next/link';
 import classes from '../styles/Home.module.scss';
 import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
@@ -11,12 +11,15 @@ import {ProductItem, FooterComp, CarouselComp} from '../components';
 interface HomePageProps {
   collections: any,
   router: any,
+  products: any,
 }
 
-const HomePage = ({collections, router}:HomePageProps) => {
+const HomePage = ({collections, router, products}:HomePageProps) => {
   const { Header, Footer, Sider, Content } = Layout;
   const { Title } = Typography;
   const { Meta } = Card;
+
+  console.log('products', products)
 
   const handleViewAll = () => {
     router.push('/collections/all')
@@ -45,7 +48,7 @@ const HomePage = ({collections, router}:HomePageProps) => {
                 <Title level={1} className={classes.mixMatchHeading}>MIX & MATCH</Title>
               </Row>
               <Row className={classes.products} gutter={[24, 24]}>
-                {collections.slice(0,8).map((item:any,index:number) => 
+                {products.slice(0,8).map((item:any,index:number) => 
                   <ProductItem item={item} index={index}/>
                 )}
               </Row>
@@ -82,16 +85,18 @@ export async function getStaticProps() {
 
   const products = await productsCollection.find().toArray();
   client.close();
-  console.log(products)
+  // console.log(products)
   // MUST return an object in getStaticProps
   return {
       props: {
           products: products.map(product => ({
-            id: product._id.toString(),
+              id: product._id.toString(),
               name: product.name,
               price: product.price,
               images: product.images,
               description: product.description,
+              moreDetails: product.moreDetails,
+              sizes: product.sizes,
           }))
       },
       // incremental static generation
@@ -99,3 +104,4 @@ export async function getStaticProps() {
       revalidate: 1
   };
 }
+

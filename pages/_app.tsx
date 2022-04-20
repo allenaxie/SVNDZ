@@ -43,7 +43,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         "/collections/Zen/Zen Zip Up Hoodie - 6.webp",
       ],
       description: "Stay cozy this season in the Zen Zip Up Hoodie. Cinched together with fitted cuffs and hemline to keep a slouchy fit. Pull over a Zen LS Top and Zen Joggers for an effortless athleisure look. ",
-      moreDetails: [`Kathy is wearing size S. Height 5'5” / Chest 33” / Waist 26”/ Hip 36"`, `Male model is wearing size L. Height  6'1" / Chest  33" / Waist  30"/ Hip 38"`, `80% Cotton | 20% Polyester`, `Machine wash cold | Tumble dry low`]
+      moreDetails: [`Kathy is wearing size S. Height 5'5” / Chest 33” / Waist 26”/ Hip 36"`, `Male model is wearing size L. Height  6'1" / Chest  33" / Waist  30"/ Hip 38"`, `80% Cotton | 20% Polyester`, `Machine wash cold | Tumble dry low`],
+      sizes: ['XS','S','M','L','XL']
     },
     {
       name: "Zen Joggers (UNISEX)",
@@ -163,4 +164,5 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default MyApp;
+
