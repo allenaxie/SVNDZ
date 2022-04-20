@@ -1,16 +1,20 @@
 import classes from "./Navbar.module.scss";
 import Link  from 'next/link';
+import { useState } from 'react';
+import {SearchProducts} from '../index';
 import { 
     MenuUnfoldOutlined, 
     MenuFoldOutlined,
     ShoppingOutlined, 
     TagOutlined,
     HomeOutlined,
-    
+    SearchOutlined,
 } from "@ant-design/icons";
 import { 
     Menu, 
-    Button 
+    Button,
+    Drawer, 
+    Input,
 } from "antd";
 
 
@@ -20,9 +24,16 @@ interface NavbarProps {
     setIsNavCollapsed: any,
     isNewUser: boolean,
     setIsNewUser: any,
+    collections: any,
 }
 
-const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsNewUser}: NavbarProps) => {
+const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsNewUser, collections}: NavbarProps) => {
+
+    const [drawerVisible, setDrawerVisible] = useState(false);
+
+    const showDrawer = () => {
+        setDrawerVisible(true);
+    }
 
     return (
         <Menu
@@ -51,6 +62,11 @@ const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsN
                     SALE
                 </Link>
             </Menu.Item>
+            <Menu.Item className={classes.menuItems} key="search" icon={ <SearchOutlined />} onClick={showDrawer}>
+                SEARCH
+            </Menu.Item>
+            <SearchProducts drawerVisible={drawerVisible} setDrawerVisible={setDrawerVisible} collections={collections}/>
+            
         </Menu>
     )
 }

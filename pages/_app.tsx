@@ -61,11 +61,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       images: ["https://cdn.shopify.com/s/files/1/0275/7784/3823/products/22006_760x.jpg?v=1643251780",]
     },
     {
-      name: "Rebel Puffer Jacket (UNISEX)",
-      price: 148,
-      images: ["https://cdn.shopify.com/s/files/1/0275/7784/3823/products/21_8a8d1851-0109-4c5a-b438-c3ef3f6ecf2a_760x.jpg?v=1636705226",]
-    },
-    {
       name: "Road Kill Sweatshirt",
       price: 68,
       images: ["https://cdn.shopify.com/s/files/1/0275/7784/3823/products/20_1d936e8f-7cfb-4d5a-bb45-67e3ec319261_760x.jpg?v=1636705458",]
@@ -141,7 +136,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         theme="light"
         trigger={null}
       >
-        <Navbar isNavCollapsed={isNavCollapsed} navToggle={navToggle} setIsNavCollapsed={setIsNavCollapsed} isNewUser={isNewUser} setIsNewUser={setIsNewUser} />
+        <Navbar isNavCollapsed={isNavCollapsed} navToggle={navToggle} setIsNavCollapsed={setIsNavCollapsed} isNewUser={isNewUser} setIsNewUser={setIsNewUser} collections={collections}/>
       </Sider>
       <Layout className="mainContainer">
         <Header className="header">

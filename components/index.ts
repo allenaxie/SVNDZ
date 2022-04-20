@@ -4,3 +4,4 @@ export {default as ProductItem} from './ProductItem/ProductItem';
 export {default as FooterComp} from './FooterComp/FooterComp';
 export {default as SizeGuide} from './SizeGuide/SizeGuide';
 export {default as CarouselComp} from './CarouselComp/CarouselComp';
+export {default as SearchProducts} from './SearchProducts/SearchProducts';
