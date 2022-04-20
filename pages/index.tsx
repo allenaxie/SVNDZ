@@ -1,4 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
+import { MongoClient } from 'mongodb';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -68,3 +69,33 @@ const HomePage = ({collections, router}:HomePageProps) => {
 }
 
 export default HomePage;
+
+// getStaticProps is a reserved function from Nextjs to ensure pre-rendered page contains data
+// Nextjs will call this function to get data before rendering page
+// runs once during build
+export async function getStaticProps() {
+  // fetch data from an API
+  // Connect to mongoDB - NEVER run on client side - this file will not run on client side so it is secure
+  const client = await MongoClient.connect('mongodb+srv://admin:admin@svndz.okep3.mongodb.net/Products?retryWrites=true&w=majority');
+  const db = client.db();
+  const productsCollection = db.collection('Collections');
+
+  const products = await productsCollection.find().toArray();
+  client.close();
+  console.log(products)
+  // MUST return an object in getStaticProps
+  return {
+      props: {
+          products: products.map(product => ({
+            id: product._id.toString(),
+              name: product.name,
+              price: product.price,
+              images: product.images,
+              description: product.description,
+          }))
+      },
+      // incremental static generation
+      // 1 represents number of seconds nextjs will revalidate data (every 1 seconds)
+      revalidate: 1
+  };
+}

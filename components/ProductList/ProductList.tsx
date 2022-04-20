@@ -10,7 +10,7 @@ const ProductList = ({collections}:ProductListProps) => {
 
     return (
         <>
-            {collections.map((item: any, index: number) => <ProductItem item={item} index={index}/>)}
+            {collections.map((item: any, index: number) => <ProductItem item={item} index={index} key={index}/>)}
         </>
     )
 }

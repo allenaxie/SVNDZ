@@ -159,7 +159,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} collections={collections} router={router}/>
         </Content>
       </Layout>
-     
     </Layout>
   )
 }
