@@ -76,7 +76,7 @@ export default HomePage;
 export async function getStaticProps() {
   // fetch data from an API
   // Connect to mongoDB - NEVER run on client side - this file will not run on client side so it is secure
-  const client = await MongoClient.connect('mongodb+srv://admin:admin@svndz.okep3.mongodb.net/Products?retryWrites=true&w=majority');
+  const client = await MongoClient.connect(`mongodb+srv://${process.env.NEXT_PUBLIC_MONGODB_USER}:${process.env.NEXT_PUBLIC_MONGODB_PASS}@svndz.okep3.mongodb.net/Products?retryWrites=true&w=majority`);
   const db = client.db();
   const productsCollection = db.collection('Collections');
 
