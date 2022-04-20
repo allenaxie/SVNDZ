@@ -1,7 +1,7 @@
-import { Layout, Row, Col, Typography, Card, Input, Button, Divider } from 'antd';
+import { Layout, Row, Col, Typography, Card, Input, BackTop } from 'antd';
 import { useEffect, useState } from 'react';
 import classes from './all.module.scss';
-import {ProductItem, ProductList} from '../../../components';
+import { ProductItem, ProductList } from '../../../components';
 
 interface AllCollectionsProps {
     collections: any,
@@ -15,29 +15,32 @@ const AllCollections = ({ collections }: AllCollectionsProps) => {
     const [productList, setProductList] = useState([]);
 
     useEffect(function () {
-        const filteredList = collections.filter((item:any) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        const filteredList = collections.filter((item: any) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
         console.log('filtered list:', filteredList)
         setProductList(filteredList);
     }, [searchTerm])
 
-    const handleChange = (e:any) => {
+    const handleChange = (e: any) => {
         let value = e.target.value;
         setSearchTerm(value);
     }
 
     return (
-        <Row className={classes.container}>
-            <Col 
-                xs={{span:22, offset:1}}
-                md={{span:12, offset:6}} 
-                className={classes.searchBarContainer}
-            >
-                <Input placeholder='Enter product name' onChange={handleChange}/>
-            </Col>
-            <Row className={classes.productsContainer} gutter={[36, 36]}>
-                 {productList.map((item,index) => <ProductItem item={item} index={index}/>)}
+        <>
+            <Row className={classes.container}>
+                <Col
+                    xs={{ span: 22, offset: 1 }}
+                    md={{ span: 12, offset: 6 }}
+                    className={classes.searchBarContainer}
+                >
+                    <Input placeholder='Enter product name' onChange={handleChange} />
+                </Col>
+                <Row className={classes.productsContainer} gutter={[36, 36]}>
+                    {productList.map((item, index) => <ProductItem item={item} index={index} />)}
+                </Row>
             </Row>
-        </Row>
+            <BackTop/>
+        </>
     )
 }
 

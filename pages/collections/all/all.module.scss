@@ -9,6 +9,20 @@
         padding: 3rem;
         display: flex;
         justify-content: center;
-    
+        width: 100%;
     }
+}
+
+.backtop {
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  .upCircleIcon {
+      font-size: 3rem;
+      background-color: rgb(0, 0, 0);
+      color: #fff;
+  }
 }
