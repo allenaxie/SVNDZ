@@ -24,16 +24,12 @@ interface NavbarProps {
     setIsNavCollapsed: any,
     isNewUser: boolean,
     setIsNewUser: any,
-    collections: any,
+    showDrawer: any,
 }
 
-const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsNewUser, collections}: NavbarProps) => {
+const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsNewUser, showDrawer}: NavbarProps) => {
 
-    const [drawerVisible, setDrawerVisible] = useState(false);
-
-    const showDrawer = () => {
-        setDrawerVisible(true);
-    }
+    
 
     return (
         <Menu
@@ -52,21 +48,14 @@ const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsN
                         HOME           
                     </Link>
             </Menu.Item>
-            <Menu.Item className={classes.menuItems} key="about" icon={<ShoppingOutlined />}>
+            <Menu.Item className={classes.menuItems} key="shopall" icon={<ShoppingOutlined />}>
                     <Link href="/collections/all">
                         SHOP ALL               
                     </Link>
             </Menu.Item>
-            <Menu.Item className={classes.menuItems} key="signup" icon={ <TagOutlined />}>
-                <Link href="/">
-                    SALE
-                </Link>
-            </Menu.Item>
             <Menu.Item className={classes.menuItems} key="search" icon={ <SearchOutlined />} onClick={showDrawer}>
                 SEARCH
             </Menu.Item>
-            <SearchSidebar drawerVisible={drawerVisible} setDrawerVisible={setDrawerVisible} collections={collections}/>
-            
         </Menu>
     )
 }

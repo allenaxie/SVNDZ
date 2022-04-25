@@ -6,17 +6,13 @@ import { SizeGuide } from '../../../../../components';
 const ProductDetailsPage = (props: any) => {
     const data = JSON.parse(props.router.query.data)
     const { Title } = Typography;
-    const [name, price, images, description, moreDetails] = [data.name,data.price, data.images, data.description, data.moreDetails ];
+    const [name, price, images, description, moreDetails, sizes] = [data.name,data.price, data.images, data.description, data.moreDetails, data.sizes ];
     const [selectedSize, setSelectedSize] = useState('M');
-
-    const sizes = ['XS','S','M','L','XL']
 
     const handleSizeClick = (e:any) => {
         let size = e.target.innerText;
         setSelectedSize(size);
     }
-
-    console.log('images',images)
 
     return (
         <Row className={classes.container}>
@@ -26,7 +22,7 @@ const ProductDetailsPage = (props: any) => {
                     className={classes.imageGroup}
                 >
                     <Image.PreviewGroup>
-                        {images.map((image :string,index:number) => <Image width={ images.length < 3 ? 400 : 250} src={image} />)}
+                        {images.map((image :string,index:number) => <Image width={ images.length < 4 ? 400 : 250} src={image} />)}
                     </Image.PreviewGroup>
                 </Col>
                 <Col
