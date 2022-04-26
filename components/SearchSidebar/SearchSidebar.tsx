@@ -50,10 +50,10 @@ const SearchSidebar = ({ drawerVisible, setDrawerVisible, isNavCollapsed,
 
     const popoverContent = (
         <div className={classes.popoverContent}>
-            {searchResults.slice(0, 3).map((item, index) =>
+            {searchResults.slice(0, 3).map((item:any, index) =>
                 <Row className={classes.popoverItem} key={index} onClick={() => handleCardClick(item)}>
                     <Col span={12} className={classes.cardImgContainer}>
-                        <img className={classes.cardImg} src={item.images[0]} preview={false} />
+                        <img className={classes.cardImg} src={item.images[0]} />
                     </Col>
                     <Col span={12} className={classes.cardDescContainer}>
                         <span className={classes.itemName}>{item.name}</span>
