@@ -1,6 +1,6 @@
 import classes from './productDetailsPage.module.scss';
 import { useState } from 'react';
-import { Row, Col, Image, Typography, Button } from 'antd';
+import { Row, Col, Image, Typography } from 'antd';
 import { SizeGuide } from '../../../../../components';
 
 const ProductDetailsPage = (props: any) => {
@@ -22,7 +22,7 @@ const ProductDetailsPage = (props: any) => {
                     className={classes.imageGroup}
                 >
                     <Image.PreviewGroup>
-                        {images.map((image :string,index:number) => <Image width={ images.length < 4 ? 400 : 250} src={image} />)}
+                        {images.map((image :string,index:number) => <Image alt="product photo" width={ images.length < 4 ? 400 : 250} src={image} key={index} />)}
                     </Image.PreviewGroup>
                 </Col>
                 <Col
@@ -35,10 +35,11 @@ const ProductDetailsPage = (props: any) => {
                         className={classes.sizeBtnGroup}
                         lg={{span:8 }}
                         >
-                            {sizes.map((size,index) => 
+                            {sizes.map((size:any, index:number) => 
                                 <button 
                                     className={selectedSize === size ? `${classes.sizeBtn} ${classes.sizeActive}` : `${classes.sizeBtn}` } 
                                     onClick={(e) => handleSizeClick(e)}
+                                    key={index}
                                 >
                                     {size}
                                 </button>
@@ -52,8 +53,8 @@ const ProductDetailsPage = (props: any) => {
                     <div className={classes.detailsContainer}>
                         <span className={classes.description}>{description}</span>
                         <ul className={classes.moreDetails}>
-                            {moreDetails?.map((detail:string) => 
-                                <li>
+                            {moreDetails?.map((detail:string,index:number) => 
+                                <li key={index}>
                                     <span className={classes.moreDetailsText}>
                                         {detail}
                                     </span>

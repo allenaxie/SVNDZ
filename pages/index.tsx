@@ -7,6 +7,7 @@ import classes from '../styles/Home.module.scss';
 import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
 import { InstagramOutlined } from "@ant-design/icons";
 import {ProductItem, FooterComp, CarouselComp} from '../components';
+import Script from 'next/script';
 
 interface HomePageProps {
   collections: any,
@@ -49,7 +50,7 @@ const HomePage = ({collections, router, products}:HomePageProps) => {
               </Row>
               <Row className={classes.products} gutter={[24, 24]}>
                 {products.slice(0,8).map((item:any,index:number) => 
-                  <ProductItem item={item} index={index}/>
+                  <ProductItem item={item} index={index} key={index}/>
                 )}
               </Row>
               <Col className={classes.btnContainer}>
@@ -63,10 +64,10 @@ const HomePage = ({collections, router, products}:HomePageProps) => {
         </Footer>
       </Layout>
       
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>
+      <Script src="https://unpkg.com/aos@next/dist/aos.js"></Script>
+      <Script id="animate-on-scroll-script">
         AOS.init();
-      </script>
+      </Script>
     </div>
   )
 }

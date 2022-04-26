@@ -50,7 +50,12 @@ const FooterComp = () => {
                 </Col>
                 <Col span={4} className={classes.footerCol}>
                     <span>CONNECT WITH US</span>
-                    <a href="https://www.instagram.com/svndz_official/" target="_blank" className={classes.iGIcon} >
+                    <a 
+                        href="https://www.instagram.com/svndz_official/" 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className={classes.iGIcon} 
+                    >
                         <InstagramOutlined />
                     </a>
                 </Col>

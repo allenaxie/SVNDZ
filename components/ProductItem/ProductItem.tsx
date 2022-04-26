@@ -31,7 +31,7 @@ const ProductItem = ({ item, index }: ProductItemProps) => {
       <Card
         hoverable
         extra={<span>{`$${item.price}.00`}</span>}
-        cover={<Image className={classes.cardImg} src={item.images[0]} preview={false}/>}
+        cover={<Image className={classes.cardImg} src={item.images[0]} preview={false} alt="product image"/>}
         className={classes.card}
         onClick={() => handleCardClick(item)}
       >

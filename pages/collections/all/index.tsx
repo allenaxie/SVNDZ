@@ -5,20 +5,15 @@ import classes from './all.module.scss';
 import { ProductItem, ProductList } from '../../../components';
 
 interface AllCollectionsProps {
-    collections: any,
     products: any,
 }
 
-const AllCollections = ({ collections, products, }: AllCollectionsProps) => {
-    const { Header, Footer, Sider, Content } = Layout;
-    const { Title } = Typography;
-    const { Meta } = Card;
+const AllCollections = ({ products, }: AllCollectionsProps) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [productList, setProductList] = useState([]);
 
     useEffect(function () {
         const filteredList = products.filter((item: any) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
-        console.log('filtered list:', filteredList)
         setProductList(filteredList);
     }, [searchTerm])
 
@@ -38,7 +33,7 @@ const AllCollections = ({ collections, products, }: AllCollectionsProps) => {
                     <Input placeholder='Enter product name' onChange={handleChange} />
                 </Col>
                 <Row className={classes.productsContainer} gutter={[36, 36]}>
-                    {productList.map((item, index) => <ProductItem item={item} index={index} />)}
+                    {productList.map((item, index) => <ProductItem item={item} index={index} key={index}/>)}
                 </Row>
             </Row>
             <BackTop/>
