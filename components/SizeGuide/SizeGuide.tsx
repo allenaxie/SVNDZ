@@ -10,6 +10,7 @@ const SizeGuide = () => {
         setModalVisible(!modalVisible)
     }
 
+
     const inchesData = [
         {
             key: '1',
