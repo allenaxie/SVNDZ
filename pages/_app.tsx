@@ -1,7 +1,7 @@
 import 'antd/dist/antd.css';
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar, SearchSidebar } from '../components';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -13,6 +13,18 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { Header, Sider, Content } = Layout;
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [isNewUser, setIsNewUser] = useState(true);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+        // update list of search results displayed everytime search input changes
+        const res = await fetch('/api/fetchProducts')
+        const data = await res.json();
+        setProducts(data);
+        // setSearchResults(filteredList);
+    }
+    fetchData();
+}, [])
 
   const navToggle = () => {
     setIsNavCollapsed(!isNavCollapsed)
@@ -46,7 +58,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           showDrawer={showDrawer}
         />
         <SearchSidebar drawerVisible={drawerVisible} setDrawerVisible={setDrawerVisible} isNavCollapsed={isNavCollapsed} 
-          setIsNavCollapsed={setIsNavCollapsed} />
+          setIsNavCollapsed={setIsNavCollapsed} 
+          products={products}
+          />
 
       </Sider>
       <Layout className="mainContainer">

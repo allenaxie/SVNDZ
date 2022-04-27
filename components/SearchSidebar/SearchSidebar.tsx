@@ -8,24 +8,17 @@ interface SearchSidebarProps {
     setDrawerVisible: any,
     isNavCollapsed: any,
     setIsNavCollapsed: any,
+    products:any,
 }
 
 const SearchSidebar = ({ drawerVisible, setDrawerVisible, isNavCollapsed,
-    setIsNavCollapsed }: SearchSidebarProps) => {
-    const [searchTerm, setSearchTerm] = useState('');
+    setIsNavCollapsed, products }: SearchSidebarProps) => {
     const [searchResults, setSearchResults] = useState([]);
+    const [popoverVisible, setPopoverVisible] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
     const router = useRouter();
-
-    useEffect(() => {
-        async function fetchData() {
-            // update list of search results displayed everytime search input changes
-            const res = await fetch('/api/fetchProducts')
-            const data = await res.json();
-            const filteredList = data.filter((item: any) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
-            setSearchResults(filteredList);
-        }
-        fetchData();
-    }, [searchTerm])
+    console.log('products', products);
+    console.log('search results', searchResults)
 
     const closeDrawer = () => {
         setDrawerVisible(false);
@@ -33,7 +26,9 @@ const SearchSidebar = ({ drawerVisible, setDrawerVisible, isNavCollapsed,
 
     const handleChange = (e: any) => {
         let value = e.target.value;
-        setSearchTerm(value);
+        // setSearchTerm(value);
+        const filteredList = products.filter((item: any) => item.name.toLowerCase().includes(value.toLowerCase()));
+        setSearchResults(filteredList);
     }
 
     const handleCardClick = (item: any) => {
@@ -50,7 +45,7 @@ const SearchSidebar = ({ drawerVisible, setDrawerVisible, isNavCollapsed,
 
     const popoverContent = (
         <div className={classes.popoverContent}>
-            {searchResults.slice(0, 3).map((item:any, index) =>
+            {searchResults.slice(0, 3).map((item:any, index:number) =>
                 <Row className={classes.popoverItem} key={index} onClick={() => handleCardClick(item)}>
                     <Col span={12} className={classes.cardImgContainer}>
                         <Image className={classes.cardImg} width={75} height={112.5} src={item.images[0]} alt="product image" preview={false}/>
