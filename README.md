@@ -12,8 +12,8 @@ This project is a recreation of the e-commerce store and clothing brand, SVNDZ.
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|<img src="public/screenshots/Screen Shot 2022-04-27 at 2.07.04 PM.png" width=200px height=110px overflow="hidden"> | <img  src="public/screenshots/Screen Shot 2022-04-27 at 2.07.30 PM.png" width=200px  height=110px overflow="hidden"> | <img src="public/screenshots/Screen Shot 2022-04-27 at 2.07.41 PM.png" width=200px  height=110px overflow="hidden"> 
-|  <img src="public/screenshots/Screen Shot 2022-04-27 at 2.07.53 PM.png" width=200px  height=110px overflow="hidden"> | <img src="public/screenshots/Screen Shot 2022-04-27 at 3.41.16 PM.png" width=200px height=110px overflow="hidden"> | 
+|<img src="public/screenshots/Screen Shot 2022-04-27 at 2.07.04 PM.png" width=300px height=150px overflow="hidden"> | <img  src="public/screenshots/Screen Shot 2022-04-27 at 2.07.30 PM.png" width=300px  height=150px overflow="hidden"> | <img src="public/screenshots/Screen Shot 2022-04-27 at 2.07.41 PM.png" width=300px  height=150px overflow="hidden"> 
+|  <img src="public/screenshots/Screen Shot 2022-04-27 at 2.07.53 PM.png" width=300px  height=150px overflow="hidden"> | <img src="public/screenshots/Screen Shot 2022-04-27 at 3.41.16 PM.png" width=300px height=150px overflow="hidden"> | 
 
 
 ## 💻 Technologies Used 
