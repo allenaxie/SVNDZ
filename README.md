@@ -28,7 +28,7 @@ This project is a recreation of the e-commerce store and clothing brand, SVNDZ.
 - Ant Design
 - Sass
 
-Link to Deployed App -- <>
+Link to Deployed App -- <https://svndz.netlify.app/>
 
 ## ⏭️ Next Steps
 
