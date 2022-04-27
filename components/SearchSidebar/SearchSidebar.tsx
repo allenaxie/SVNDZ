@@ -1,8 +1,7 @@
 import classes from './SearchSidebar.module.scss';
 import { useEffect, useState } from 'react';
-import { Drawer, Input, Popover, Row, Col,} from 'antd';
+import { Drawer, Input, Popover, Row, Col, Image} from 'antd';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 
 interface SearchSidebarProps {
     drawerVisible: boolean,
@@ -54,7 +53,7 @@ const SearchSidebar = ({ drawerVisible, setDrawerVisible, isNavCollapsed,
             {searchResults.slice(0, 3).map((item:any, index) =>
                 <Row className={classes.popoverItem} key={index} onClick={() => handleCardClick(item)}>
                     <Col span={12} className={classes.cardImgContainer}>
-                        <Image className={classes.cardImg} src={item.images[0]} alt="product image"/>
+                        <Image className={classes.cardImg} width={75} height={112.5} src={item.images[0]} alt="product image" preview={false}/>
                     </Col>
                     <Col span={12} className={classes.cardDescContainer}>
                         <span className={classes.itemName}>{item.name}</span>

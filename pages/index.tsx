@@ -1,21 +1,17 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { MongoClient } from 'mongodb';
-import Link from 'next/link';
 import classes from '../styles/Home.module.scss';
-import { Layout, Carousel, Row, Col, Typography, Card, Form, Input, Button, Divider } from 'antd';
-import { InstagramOutlined } from "@ant-design/icons";
+import { Layout, Row, Col, Typography, Card } from 'antd';
 import {ProductItem, FooterComp, CarouselComp} from '../components';
 import Script from 'next/script';
 
 interface HomePageProps {
-  collections: any,
   router: any,
   products: any,
 }
 
-const HomePage = ({collections, router, products}:HomePageProps) => {
+const HomePage = ({router, products}:HomePageProps) => {
   const { Header, Footer, Sider, Content } = Layout;
   const { Title } = Typography;
   const { Meta } = Card;
@@ -42,8 +38,8 @@ const HomePage = ({collections, router, products}:HomePageProps) => {
   
             <Row
               className={classes.mixMatchSection}
-              data-aos="fade-up"
-              data-aos-duration="2000"
+              // data-aos="fade-up"
+              // data-aos-duration="2000"
             >
               <Row className={classes.mixMatchHeadingContainer}>
                 <Title level={1} className={classes.mixMatchHeading}>MIX & MATCH</Title>
@@ -63,11 +59,11 @@ const HomePage = ({collections, router, products}:HomePageProps) => {
           <FooterComp/>
         </Footer>
       </Layout>
-      
-      <Script src="https://unpkg.com/aos@next/dist/aos.js"></Script>
-      <Script id="animate-on-scroll-script">
+      {/* <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
         AOS.init();
-      </Script>
+      </script> */}
+      
     </div>
   )
 }

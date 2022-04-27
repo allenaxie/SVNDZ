@@ -13,7 +13,6 @@ const ProductItem = ({ item, index }: ProductItemProps) => {
   const { Meta } = Card;
 
   const handleCardClick = (item: any) => {
-    console.log('item', item)
     router.push({
       pathname: `/collections/all/products/${item.name}`,
       query: {
