@@ -12,7 +12,7 @@ export default async function handler(
   const productsCollection = db.collection('Collections');
 
   const products = await productsCollection.find().toArray();
-  client.close();
+  // client.close();
   const data = await res.json(products)
 }
 
