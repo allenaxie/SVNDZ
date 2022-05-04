@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout className="mainContainer">
         <Header className="header">
         {isNavCollapsed || <div className="backdrop" onClick={navToggle}></div>}
-          <div className="logo" onClick={handleClick}><Image alt="logo" src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/logo_white.png?v=1590001197" width={150} height={40} /></div>
+          <div className="logo" onClick={handleClick}><Image className="logo-image" alt="logo" src="https://cdn.shopify.com/s/files/1/0275/7784/3823/files/logo_white.png?v=1590001197" width={150} height={40} /></div>
           <div key="My Cart" className="headerItem">
             <ShoppingCartOutlined />
             <span>
