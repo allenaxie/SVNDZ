@@ -4,14 +4,57 @@
     align-items: flex-start;
     padding: 2rem;
 
+    @media screen and (max-width:768px) {
+      padding: 1rem;
+    }
+
     .footerCol {
       display: flex;
       flex-direction: column;
+
+      @media screen and (max-width:768px) {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: .5rem 0;
+      }
+
+      &:last-child {
+
+        .form {
+          display: flex;
+          margin-top: 1rem;
+  
+          .emailFormItem {
+            width:100%;
+
+            @media screen and (max-width:768px) {
+              width: 50%;
+            }
+          }
+
+          .btnContainer {
+            @media screen and (max-width:768px) {
+              margin-left: 1rem;
+            }
+          }
+        }
+
+        @media screen and (max-width:768px) {
+          flex-direction: column;
+        }
+      }
 
       .linkText {
         color: #fff;
         cursor: pointer;
         margin-bottom: 1rem;
+
+        &:not(:first-child) {
+          @media screen and (max-width:768px) {
+            margin: 0 1rem;
+            padding: 0 !important;
+          }
+        }
       }
 
       .iGIcon {
@@ -20,21 +63,20 @@
         display: flex;
         width: min-content;
 
+        @media screen and (max-width:768px) {
+          margin: 0 1rem;
+        }
+
         & svg {
           width: 20px;
           height: 20px;
         }
       }
 
-      .form {
-        display: flex;
-        margin-top: 1rem;
-
-        .emailFormItem {
-          width:100%;
-        }
-      }
     }
+
+    
+    
   }
 
   .copyrightContent {

@@ -7,7 +7,13 @@ const FooterComp = () => {
     return (
         <>
             <Row className={classes.footerContent}>
-                <Col span={4} className={classes.footerCol}>
+                <Col
+                    xs={{span:24}}
+                    lg={{span:4}} 
+                    // span={4} 
+                    className={classes.footerCol}
+                
+                >
                     <Link href="/">
                         <span className={classes.linkText}>
                             ORDER AND PAYMENT
@@ -29,7 +35,11 @@ const FooterComp = () => {
                         </span>
                     </Link >
                 </Col>
-                <Col span={4} className={classes.footerCol}>
+                <Col 
+                    xs={{span:24}}
+                    lg={{span:4}}  
+                    className={classes.footerCol}
+                >
                     <Link href="/">
                         <span className={classes.linkText}>
                             PRIVACY POLICY
@@ -41,14 +51,22 @@ const FooterComp = () => {
                         </span>
                     </Link>
                 </Col>
-                <Col span={4} className={classes.footerCol}>
+                <Col 
+                    xs={{span:24}}
+                    lg={{span:4}} 
+                    className={classes.footerCol}
+                >
                     <Link href='/' >
                         <span className={classes.linkText}>
                             CONTACT US
                         </span>
                     </Link>
                 </Col>
-                <Col span={4} className={classes.footerCol}>
+                <Col 
+                    xs={{span:24}}
+                    lg={{span:4}} 
+                    className={classes.footerCol}
+                >
                     <span>CONNECT WITH US</span>
                     <a 
                         href="https://www.instagram.com/svndz_official/" 
@@ -59,7 +77,11 @@ const FooterComp = () => {
                         <InstagramOutlined />
                     </a>
                 </Col>
-                <Col span={4} className={classes.footerCol}>
+                <Col 
+                    xs={{span:24}}
+                    lg={{span:4}} 
+                    className={classes.footerCol}
+                >
                     <span>
                         SUBSCRIBE TO OUR NEWSLETTER
                     </span>
@@ -74,7 +96,7 @@ const FooterComp = () => {
                         >
                             <Input placeholder="Enter your email" type="email" />
                         </Form.Item>
-                        <Form.Item>
+                        <Form.Item className={classes.btnContainer}>
                             <Button htmlType="submit">Submit</Button>
                         </Form.Item>
                     </Form>
