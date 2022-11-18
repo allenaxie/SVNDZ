@@ -1,6 +1,10 @@
 .container {
   position: relative;
   padding-left: 80px;
+
+  @media only screen and (max-width: 760px) {
+    padding-left: 0;
+  }
 }
 
 .main {
@@ -20,6 +24,10 @@
         text-decoration-thickness: 2px;
         letter-spacing: 1px;
         margin-bottom: 2rem;
+
+        @media only screen and (max-width: 760px) {
+          font-size: 3rem;
+        }
       }
     }
   }

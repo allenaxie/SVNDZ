@@ -1,0 +1,18 @@
+.mobileNavbarContainer {
+    border: 0;
+    width: 50vw;
+}
+
+.togglerContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menuItems {
+    cursor: pointer;
+    padding: 5px;
+
+    &:hover {
+        background-color: rgba(228, 228, 228, 0.678);
+    }
+}

@@ -23,9 +23,9 @@ const ProductItem = ({ item, index }: ProductItemProps) => {
 
   return (
     <Col
-      xs={{ span: 24 }}
-      sm={{ span: 12 }}
-      lg={{ span: 6 }}
+      xs={{ span: 18, offset:3 }}
+      sm={{ span: 8, offset: 3 }}
+      xl={{ span: 5, offset: 2 }}
     >
       <Card
         hoverable

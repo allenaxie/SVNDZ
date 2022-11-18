@@ -3,16 +3,30 @@
     cursor: pointer;
     background-color: rgba(214, 211, 199, 0.894);
 
+    @media only screen and (max-width: 760px) {
+      padding-top: 6rem;
+    }
+
     .carouselItem {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+
+      @media only screen and (max-width: 760px) {
+
+      }
     }
     .carouselImg {
       width: 100%;
       padding-bottom: 5px;
+
+      @media only screen and (max-width: 760px) {
+        object-fit: contain;
+        height: 60vh;
+
+      }
   
     }
   }

@@ -29,8 +29,6 @@ interface NavbarProps {
 
 const Navbar = ({isNavCollapsed, navToggle, setIsNavCollapsed, isNewUser, setIsNewUser, showDrawer}: NavbarProps) => {
 
-    
-
     return (
         <Menu
             className={classes.navbarContainer}
