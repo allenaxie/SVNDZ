@@ -17,8 +17,7 @@ const SearchSidebar = ({ drawerVisible, setDrawerVisible, isNavCollapsed,
     const [popoverVisible, setPopoverVisible] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const router = useRouter();
-    console.log('products', products);
-    console.log('search results', searchResults)
+
 
     const closeDrawer = () => {
         setDrawerVisible(false);

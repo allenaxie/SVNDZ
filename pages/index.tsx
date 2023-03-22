@@ -16,8 +16,6 @@ const HomePage = ({router, products}:HomePageProps) => {
   const { Title } = Typography;
   const { Meta } = Card;
 
-  // console.log('products', products)
-
   const handleViewAll = () => {
     router.push('/collections/all')
   }
@@ -81,8 +79,7 @@ export async function getStaticProps() {
   const productsCollection = db.collection('Collections');
 
   const products = await productsCollection.find().toArray();
-  // client.close();
-  // console.log(products)
+
   // MUST return an object in getStaticProps
   return {
       props: {

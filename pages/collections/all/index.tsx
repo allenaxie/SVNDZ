@@ -54,8 +54,7 @@ export async function getStaticProps() {
     const productsCollection = db.collection('Collections');
   
     const products = await productsCollection.find().toArray();
-    // client.close();
-    // console.log(products)
+
     // MUST return an object in getStaticProps
     return {
         props: {
