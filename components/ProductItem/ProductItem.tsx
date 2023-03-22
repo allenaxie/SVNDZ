@@ -4,7 +4,11 @@ import { Col, Card, Image } from 'antd';
 
 
 interface ProductItemProps {
-  item: any,
+  item: {
+    price: number,
+    name: string,
+    images: [string],
+  },
   index: number,
 }
 

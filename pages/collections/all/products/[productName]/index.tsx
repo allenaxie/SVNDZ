@@ -6,7 +6,6 @@ import { MongoClient } from 'mongodb';
 
 const ProductDetailsPage = ({ data }: any) => {
     const { Title } = Typography;
-    // console.log('data', data);
     const [selectedSize, setSelectedSize] = useState('M');
 
     const handleSizeClick = (e: any) => {
@@ -77,8 +76,7 @@ export async function getStaticPaths() {
     const productsCollection = db.collection('Collections');
   
     const data = await productsCollection.find().toArray();
-    // client.close();
-    // console.log('dataaaaa',data)
+
     const paths = data.map((product: any) => {
         return {
             params: {
@@ -97,11 +95,8 @@ export async function getStaticProps(context: any) {
     const client = await MongoClient.connect(`mongodb+srv://${process.env.NEXT_PUBLIC_MONGODB_USER}:${process.env.NEXT_PUBLIC_MONGODB_PASS}@svndz.okep3.mongodb.net/Products?retryWrites=true&w=majority`);
     const db = client.db();
     const productsCollection = db.collection('Collections');
-    // console.log('context', context.params.productName);
     const res = await productsCollection.find().toArray();
-    //   console.log('res', res);
     const data = JSON.parse(JSON.stringify(res.filter(product => product?.name === context.params.productName)));
-    // client.close();
     return {
         props: {
             data: data[0]
